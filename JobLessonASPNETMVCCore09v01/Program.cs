@@ -1,3 +1,6 @@
+using JobLessonASPNETMVCCore09v01.Services.Impl;
+using JobLessonASPNETMVCCore09v01.Services;
+
 namespace JobLessonASPNETMVCCore09v01
 {
     public class Program
@@ -5,6 +8,7 @@ namespace JobLessonASPNETMVCCore09v01
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddSingleton<IEmployeesRepository, EmployeesRepository>();
 
             builder.Services.AddControllersWithViews();
 
